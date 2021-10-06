@@ -1,3 +1,11 @@
 @echo off
-cp /var/lib/jenkins/workspace/Maven Assignment 01/Package/addressbook_main/target/addressbook.war /home/edureka/Desktop/
+echo %ART_ID% : %ART_URL% 
+echo %REL_ART_ID% : %REL_ART_URL%
+
+set REL_ART_ID=release-qa
+SET REL_ART_URL=http://localhost:8081/repository/release-qa/
+
+set REL_ART_ID=maven-releases
+SET REL_ART_URL=http://localhost:8081/repository/maven-releases/
+
 mvn deploy 
