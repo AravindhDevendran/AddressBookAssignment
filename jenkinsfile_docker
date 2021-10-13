@@ -1,0 +1,18 @@
+pipeline{
+agent any
+stages{
+stage ('compile the application') {
+steps {
+sh 'mvn compile'
+}
+}
+stage ('Packaging the application') {
+steps {
+sh 'mvn package'
+}
+}
+stage ('create the docker image') {
+steps {
+sh 'sudo docker build -t addressbookassignment:2222.$BUILD_NUMBER .'
+}
+}
